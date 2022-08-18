@@ -40,7 +40,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <h1>Optical Character Recognition</h1>
+        <h1>Extract Text From Image</h1>
       </div>
       <div id="file">
         <input type="file" onChange={onFileChange} />
