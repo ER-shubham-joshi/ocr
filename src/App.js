@@ -20,7 +20,6 @@ function App() {
   const processImage = () => {
     setDisableSubmit(true);
     setProgress(0);
-    console.log("will convert");
     Tesseract.recognize(file, language, {
       logger: (m) => {
         if (m.status === "recognizing text") {
@@ -34,7 +33,6 @@ function App() {
         }
       },
     }).then(({ data: { text } }) => {
-      console.log(text);
       setText(text);
     });
   };
