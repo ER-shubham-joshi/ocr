@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Tesseract from "tesseract.js";
+import { langOptions } from "./constant/App.constant";
 
 function App() {
   const [file, setFile] = useState("");
@@ -39,14 +40,14 @@ function App() {
   return (
     <div className="App">
       <div>
-        <h1>Extract Text From Image</h1>
+        <h1>Optical Character Recognition</h1>
       </div>
       <div id="file">
         <input type="file" onChange={onFileChange} />
         <select value={language} onChange={(e) => setLanguage(e.target.value)}>
-          <option value="eng">English</option>
-          <option value="hin">Hindi</option>
-          <option value="san">Sanskrit</option>
+          {langOptions.map(({ key, value }) => (
+            <option value={value}>{key}</option>
+          ))}
         </select>
       </div>
 
